@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = Vgina-Windows-QT
-VERSION = 1.1.0
+TARGET = Vgina-Multisend-QT
+VERSION = 1.2.0
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
@@ -249,6 +249,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/transactionview.h \
     src/qt/walletmodel.h \
     src/bitcoinrpc.h \
+	src/qt/multisenddialog.h \	
     src/qt/overviewpage.h \
     src/qt/csvmodelwriter.h \
     src/crypter.h \
@@ -344,6 +345,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/notificator.cpp \
     src/qt/qtipcserver.cpp \
     src/qt/rpcconsole.cpp \
+	src/qt/multisenddialog.cpp \	
     src/noui.cpp \
     src/kernel.cpp \
     src/scrypt-arm.S \
@@ -374,6 +376,7 @@ FORMS += \
     src/qt/forms/editaddressdialog.ui \
     src/qt/forms/transactiondescdialog.ui \
     src/qt/forms/overviewpage.ui \
+	src/qt/forms/multisenddialog.ui \	
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
