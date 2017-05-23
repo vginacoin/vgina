@@ -2,17 +2,21 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-USE_UPNP:=0
+CXX ?= g++
+
+USE_UPNP:=1
 
 INCLUDEPATHS= \
+ -I"$(CURDIR)" \
  -I"C:\deps\boost_1_55_0" \
  -I"C:\deps\db-4.8.30.NC\build_unix" \
- -I"C:\deps\openssl-1.0.1g\include"
+ -I"C:\deps\openssl-1.0.2k\include"
 
 LIBPATHS= \
+ -L"$(CURDIR)/leveldb" \
  -L"C:\deps\boost_1_55_0\stage\lib" \
  -L"C:\deps\db-4.8.30.NC\build_unix" \
- -L"C:\deps\openssl-1.0.1g"
+ -L"C:\deps\openssl-1.0.2k"
 
 LIBS= \
  -l leveldb \
