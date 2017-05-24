@@ -14,6 +14,7 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
+class MultiSendDialog;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -34,8 +35,10 @@ class BitcoinGUI : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit BitcoinGUI(QWidget *parent = 0);
-    ~BitcoinGUI();
+    bool fMultiSend;
+    bool fMultiSendNotify;
+        explicit BitcoinGUI(QWidget *parent = 0);
+   ~BitcoinGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -65,6 +68,7 @@ private:
     AddressBookPage *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
     SignVerifyMessageDialog *signVerifyMessageDialog;
+	MultiSendDialog *multiSendDialog;
 
     QLabel *labelEncryptionIcon;
     QLabel *labelStakingIcon;
@@ -93,7 +97,8 @@ private:
     QAction *lockWalletAction;
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
-
+	QAction * multiSendAction;
+	
     QSystemTrayIcon *trayIcon;
     Notificator *notificator;
     TransactionView *transactionView;
@@ -181,6 +186,9 @@ private slots:
     void toggleHidden();
 
     void updateStakingIcon();
+	
+	void multiSendClicked(QString addr = "");
+	
 };
 
 #endif
